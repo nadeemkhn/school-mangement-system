@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="teacher_report_template_id">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.external_layout">
+
+                        <div class="page">
+                            <h2 class="text-center fs-1 p-2  bg-danger text-white mb-5">Teacher Report</h2>
+                            <div class="container">
+                                <div class="row mb-4">
+                                    <div class="col-6">
+                                        <strong class="p-1">Teacher Sequence No:</strong>
+                                        <span>
+                                            <t t-esc="doc.reference"/>
+                                        </span>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong class="p-1">Teacher Name :</strong>
+                                        <span>
+                                            <t t-esc="doc.name"/>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-4">
+                                    <div class="col-6">
+                                        <strong class="p-1">Subject :</strong>
+                                        <span>
+                                            <t t-esc="doc.subject"/>
+                                        </span>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong class="p-1">Speciality:</strong>
+                                        <span>
+                                            <t t-esc="doc.profession"/>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-4">
+                                    <div class="col-6">
+                                        <strong class="p-1">State :</strong>
+                                        <span>
+                                            <t t-esc="doc.state"/>
+                                        </span>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

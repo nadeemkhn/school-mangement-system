@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="student_report_template_id">
+            <t t-call="web.html_container">
+                    <t t-foreach="docs" t-as="o">
+                        <t t-call="web.external_layout">
+                        <header>
+                            <div class="page">
+                                <div class="container">
+                                    <div class="report-header text-center mb-4">
+                                        <h2 class="text-primary">Student Report</h2>
+                                        <hr class="border-primary" style="width: 50%;"/>
+                                    </div>
+                                    <table class="table table-bordered">
+                                        <thead class="thead-light">
+                                            <tr>
+                                                <th colspan="2" class="text-center bg-primary text-white py-2">
+                                                    <h4>Student Details</h4>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="font-weight-bold">Student Sequence:</td>
+                                                <td>
+                                                    <t t-esc="o.sequence_student"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-weight-bold">Name:</td>
+                                                <td>
+                                                    <t t-esc="o.name"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-weight-bold">Class Name:</td>
+                                                <td>
+                                                    <t t-esc="o.class_name"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-weight-bold">Roll No:</td>
+                                                <td>
+                                                    <t t-esc="o.roll_no"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-weight-bold">Group:</td>
+                                                <td>
+                                                    <t t-esc="o.group"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-weight-bold">Gender:</td>
+                                                <td>
+                                                    <t t-esc="o.gender"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font-weight-bold">State:</td>
+                                                <td>
+                                                    <t t-esc="o.state"/>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <div class="report-footer mt-4 text-center">
+                                        <p class="text-muted">Generated on:/></p>
+                                        <small class="text-muted">This report is generated for official use only.
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </header>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
+
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <menuitem id="school_menu"
+                  name="School Mangement System"
+                  web_icon="cheeter,static/description/icon.png"
+                  sequence="01"/>
+
+
+    </data>
+</odoo>

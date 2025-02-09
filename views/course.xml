@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+         <record id="course_view_form" model="ir.ui.view">
+            <field name="name">course_view_form</field>
+            <field name="model">course.course</field>
+            <field name="arch" type="xml">
+                <form string="_form">
+                    <header>
+                        <button name="action_confirm" string="Confirm" class="btn-primary" type="object"/>
+                        <button name="action_done" string="Mark as a Done" class="btn-primary" type="object"/>
+                        <button name="action_draft" string="set as draft" class="btn-primary" type="object"/>
+                        <button name="action_cancel" string="cancel" class="btn-primary" type="object"/>
+                        <field name="state" widget="statusbar" statusbar_visible="confirm,done,draft,cancel"/>
+
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="sequence_course" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+
+
+
+                        </group>
+
+                        <notebook>
+                            <page string="Student">
+
+                                    <tree editable="bottom">
+                                        <field name="student_id"/>
+
+                                    </tree>
+                            </page>
+                        </notebook>
+
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="course_view_tree" model="ir.ui.view">
+            <field name="name">course_view_tree</field>
+            <field name="model">course.course</field>
+            <field name="arch" type="xml">
+                <tree string="student_tree">
+                    <field name="name"/>
+                    <field name="student_id"/>
+                    <field name="state"/>
+
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="course_kanban_view" model="ir.ui.view">
+            <field name="name">Student kanban View</field>
+            <field name="model">course.course</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <templates>
+                        <t t-name="kanban-box">
+
+                            <div style="font_size:6px;color:red;margin-top:20px; 1px solid;display:inline-grid;background-color:#800080;"
+                                 class="">
+                                <h1 style="color:red;">
+                                    <field name="name"/>
+                                </h1>
+                                <p>
+                                    <field name="student_id"/>
+                                </p>
+
+
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+        <record id="student_search_view" model="ir.ui.view">
+            <field name="name">Student search view</field>
+            <field name="model">course.course</field>
+            <field name="arch" type="xml">
+                <search string="">
+                    <field name="name"/>
+
+                    <group expand="1" string="Group By">
+                        <filter string="Name" name="group_by_name" context="{'group_by': 'name'}"/>
+
+                    </group>
+
+                </search>
+            </field>
+        </record>
+
+
+
+        <record id="course_action" model="ir.actions.act_window">
+            <field name="name">Course Action View</field>
+            <field name="res_model">course.course</field>
+            <field name="view_mode">tree,kanban,form</field>
+        </record>
+        <menuitem id="course_menu_view" name="Courses" parent="school_menu" action="course_action" sequence="02"/>
+
+
+    </data>
+</odoo>

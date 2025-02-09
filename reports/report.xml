@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+    <report id="student_report_action"
+            model="student.school"
+            string="Student"
+            report_type="qweb-pdf"
+            file="cheeter.student_report_template_id"
+            name="cheeter.student_report_template_id"/>
+
+
+    <report id="teacher_report_action"
+            model="teacher.school"
+            string="Teacher"
+            report_type="qweb-pdf"
+            file="cheeter.teacher_report_template_id"
+            name="cheeter.teacher_report_template_id"/>
+
+
+     <report id="course_report_action"
+            model="course.course"
+            string="Course"
+            report_type="qweb-pdf"
+            file="cheeter.course_report_template_id"
+            name="cheeter.course_report_template_id"/>
+
+    <report id="course_report_action_xls"
+            model="teacher.school"
+            string="Teacher excel"
+            report_type="xlsx"
+            file="cheeter.course_report_template_id_xls"
+            name="cheeter.course_report_template_id_xls"/>
+</data>
+</odoo>
